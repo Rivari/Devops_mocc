@@ -1,0 +1,18 @@
+ubuntu@ubuntu-System-Product-Name:~$ docker run -d devopsdockeruh/exec_bash_exercise
+
+ubuntu@ubuntu-System-Product-Name:~$ docker container ls
+CONTAINER ID        IMAGE                               COMMAND             CREATED             STATUS              PORTS               NAMES
+f2302aa14be1        devopsdockeruh/exec_bash_exercise   "node index"        32 seconds ago      Up 31 seconds                           wizardly_herschel
+
+ubuntu@ubuntu-System-Product-Name:~$ docker exec -it f2302aa14be1 bash
+
+root@f2302aa14be1:/usr/app# tail -f ./logs.txt 
+Secret message is:
+"Docker is easy"
+Sun, 27 Oct 2019 10:20:17 GMT
+Sun, 27 Oct 2019 10:20:20 GMT
+Sun, 27 Oct 2019 10:20:23 GMT
+Sun, 27 Oct 2019 10:20:26 GMT
+Secret message is:
+"Docker is easy"
+Sun, 27 Oct 2019 10:20:32 GMT

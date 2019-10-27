@@ -1,0 +1,24 @@
+buntu@ubuntu-System-Product-Name:~$ docker run -it ubuntu bash
+#apt-get update
+#apt-get install curl
+#Y
+#exit
+
+ubuntu@ubuntu-System-Product-Name:~$ docker ps -a
+CONTAINER ID        IMAGE                               COMMAND             CREATED             STATUS                         PORTS               NAMES
+12283a97d9fd        ubuntu                              "bash"              2 minutes ago       Exited (0) 5 seconds ago                           jovial_goldberg
+
+ubuntu@ubuntu-System-Product-Name:~$ docker commit 12283a97d9fd ubuntu-curl
+
+
+buntu@ubuntu-System-Product-Name:~$ docker run -it ubuntu-curl sh -c 'echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website;'
+Input website:
+helsinki.fi
+Searching..
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>301 Moved Permanently</title>
+</head><body>
+<h1>Moved Permanently</h1>
+<p>The document has moved <a href="http://www.helsinki.fi/">here</a>.</p>
+</body></html>
