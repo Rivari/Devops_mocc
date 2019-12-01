@@ -1,1 +1,1 @@
-docker run -it -p 8080:8000 -v $pwd\1.11\backend\logs.txt:/usr/node/server/logs.txt --name my-running-nodejs-server-v1.2.5 my-nodejs-server-v1.1 npm start
+docker run -p 8000:8000 -v $pwd\1.12\backend\logs.txt:/usr/scr/app/logs.txt -e "FRONT_URL=localhost:5000" my-nodejs-server-v1.1 npm start

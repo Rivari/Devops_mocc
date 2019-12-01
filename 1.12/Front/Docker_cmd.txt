@@ -1,0 +1,1 @@
+docker run -p 5000:5000 -e "API_URL=localhost:8000" my-nodejs-front-v1.1 npm start

@@ -1,13 +1,10 @@
 FROM node:10-jessie
 
-WORKDIR /usr/node/server
-COPY /backend /usr/node/server
+WORKDIR /usr/scr/app
+COPY /backend ./
 
-RUN npm update && npm install
+RUN npm install
 ENV NODE_ENV=production
+#ENV REDIS=localhost
 
 EXPOSE 8000
-
-CMD [ "npm start" ]
-
-

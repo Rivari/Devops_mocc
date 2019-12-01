@@ -1,12 +1,9 @@
-FROM node:latest
+FROM node:10-jessie
 
-WORKDIR /home/node/app
-COPY /app /home/node/app 
-
-RUN npm update && npm install
+WORKDIR /usr/scr/app
+COPY /app ./
+ 
+RUN npm install
 ENV NODE_ENV=production
-ENV API_URL=http://localhost:8080 npm start
 
-EXPOSE 5000
-
-CMD [ "npm start" ]
+EXPOSE 500
